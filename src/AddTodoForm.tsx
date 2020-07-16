@@ -1,4 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import Button from "@material-ui/core/Button";
+import AddIcon from "@material-ui/icons/Add";
+import "./TodoListItems.css";
 
 interface AddTodoFormProps {
   addTodo: AddTodo;
@@ -18,10 +21,15 @@ export const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
   };
   return (
     <form>
-      <input type="text" value={newTodo} onChange={handleChange} />
-      <button type="submit" onClick={handleSubmit}>
-        Add Todo
-      </button>
+      <input
+        type="text"
+        value={newTodo}
+        onChange={handleChange}
+        placeholder="Add items"
+      />
+      <Button className="newBtn" onClick={handleSubmit}>
+        <AddIcon />
+      </Button>
     </form>
   );
 };

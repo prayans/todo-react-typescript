@@ -11,15 +11,17 @@ export const TodoListItem: React.FC<TodoListItemsProps> = ({
   toggleTodo,
 }) => {
   return (
-    <li>
-      <label className={todo.complete ? "complete" : undefined}>
-        <input
-          type="checkbox"
-          checked={todo.complete}
-          onChange={() => toggleTodo(todo)}
-        />
-        {todo.text}
-      </label>
-    </li>
+    <ol>
+      <div className="todo_style">
+        <span className={todo.complete ? "complete" : undefined}>
+          <input
+            type="checkbox"
+            checked={todo.complete}
+            onChange={() => toggleTodo(todo)}
+          />
+          {todo.text}
+        </span>
+      </div>
+    </ol>
   );
 };
